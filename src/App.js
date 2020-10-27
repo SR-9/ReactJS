@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useReduce } from 'react'
 import './App.css'
-import { Provider } from 'react-redux'
-import { store } from './redux/store'
 
-import  HomeScreen from "./screen/home_screen";
+import  HomeScreen from "./screen/home/home_screen"
+import  DetailScreen from "./screen/detail/detail_screen"
+import  {StateProvider} from './store/store'
+
+
 
 function App() {
   return (
-    <Provider store = { store }>
+    <StateProvider>
       <div className="App">
           <HomeScreen />
+          <DetailScreen />
       </div>
-    </Provider>
+    </StateProvider>
   )
 }
 
