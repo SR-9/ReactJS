@@ -1,4 +1,4 @@
-import React, { useReduce } from 'react'
+import React from 'react'
 import './App.css'
 
 import  HomeScreen from "./screen/home/home_screen"

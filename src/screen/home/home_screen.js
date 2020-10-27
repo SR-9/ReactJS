@@ -1,10 +1,8 @@
-import React, { useReducer, useContext } from 'react'
+import React, { useReducer } from 'react'
 import { Button, TextField } from '@material-ui/core'
 import { TopBar } from './../../component/top_bar'
 import { addTodo } from './home_action'
 import { homeReducers } from './home_reducer'
-import {Consumer, AppContext} from './../../App'
-
 
 
 const HomeScreen =() => {
