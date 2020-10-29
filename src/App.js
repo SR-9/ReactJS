@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 
-import  HomeScreen from "./screen/home/home_screen"
-import  DetailScreen from "./screen/detail/detail_screen"
 import  {StateProvider} from './store/store'
+import LoginScreen from './screen/auth/login_screen'
 
 
 
 function App() {
+
+  useEffect(() => document.title = "Demo")
+  
   return (
     <StateProvider>
       <div className="App">
-          <HomeScreen />
-          <DetailScreen />
+         <LoginScreen />
       </div>
     </StateProvider>
   )
