@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         marginLeft: 'auto',
         marginRight: 'auto',
-        backgroundColor: colors.grey[200]
+        marginTop: 100,
     },
 
     textField: {
