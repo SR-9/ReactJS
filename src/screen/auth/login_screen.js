@@ -1,6 +1,8 @@
 import { makeStyles, Button, TextField, colors, IconButton, Grid, Rows } from '@material-ui/core'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { VisibilityOutlined, VisibilityOffOutlined, PersonOutlined, LockOutlined, LockOpenOutlined } from '@material-ui/icons';
+import LoginPresenter from './login'
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,14 +21,24 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+
+
+const loginPresenter = new LoginPresenter()
+
 const LoginScreen = ({ props }) => {
 
     const style = useStyles()
 
     const [isPassword, setIsPassword] = useState(true)
-    const [username, setUsername] = useState('my username1')
-    const [password, setPassword] = useState('my password')
-    const [loginStatus, setLoginStatus] = useState('')
+    const [username, setUsername] = useState('test@user.com')
+    const [password, setPassword] = useState('12345')
+    const [loginStatus, setLoginStatus] = useState(0)
+
+
+    useEffect( () => {
+        console.log('12313131231321231')
+        loginPresenter.login(username, password)
+     }, [loginStatus])
 
     return (
         <div className={style.root}>
@@ -63,7 +75,7 @@ const LoginScreen = ({ props }) => {
                         color='primary'
                         size='large'
                         onClick={() => {
-                            setLoginStatus(`${username} - ${password}`)
+                            setLoginStatus(loginStatus + 1)
                         }}>Login</Button>
 
                     <h1>{loginStatus}</h1>
